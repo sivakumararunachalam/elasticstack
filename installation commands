@@ -8,3 +8,8 @@ docker-compose config ( from the docker-compose.yml directory)
 docker-compose up -d
 apt install curl
 apt install net-tools
+#check the parameter value
+sysctl vm.max_map_count
+
+#update /etc/sysctl.conf
+
