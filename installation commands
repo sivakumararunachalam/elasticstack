@@ -1,0 +1,8 @@
+sudo apt-get update
+sudo apt-get install docker.io
+sudo gpasswd -a ubuntu3 docker ( requires restart)
+sudo apt install docker-compose
+
+https://github.com/sivakumararunachalam/elasticstack.git
+docker-compose config ( from the docker-compose.yml directory)
+docker-compose up -d
