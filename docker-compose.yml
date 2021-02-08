@@ -9,12 +9,17 @@ services:
       - discovery.type=single-node
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - TAKE_FILE_OWNERSHIP="true"
     ulimits:
       memlock:
         soft: -1
         hard: -1
     volumes:
-      - data01:/usr/share/elasticsearch/data
+     # - data01:/usr/share/elasticsearch/data
+       - /var/elasticsearch/data/data01:/usr/share/elasticsearch/data
+       - /var/elasticsearch/logs/:/usr/share/elasticsearch/logs
+     # - /var/elasticsearch/config:/usr/share/elasticsearch/config/
+
     ports:
       - 9200:9200
     networks:
@@ -22,7 +27,7 @@ services:
 
   kib01:
     image: docker.elastic.co/kibana/kibana:7.10.2
-    container_name: kib01
+  container_name: kib01
     ports:
       - 5601:5601
     environment:
