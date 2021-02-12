@@ -17,4 +17,6 @@ sudo chmod g+rwx elasticsearch/
 sudo chmod g+rwx logs data config
 sudo chgrp 0 logs data config
 
+Metric beat installtion:
+./metricbeat -e -c /etc/metricbeat/metricbeat.yml &
 
